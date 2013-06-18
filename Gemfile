@@ -3,8 +3,15 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0.rc1'
 
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+#Database
+gem 'pg'
+gem 'bcrypt-ruby', :require => 'bcrypt'
+gem 'aws-s3'
+
+#picutres
+gem "rmagick"
+gem "carrierwave"
+gem "fog"
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0.rc1'
