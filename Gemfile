@@ -3,15 +3,19 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0.rc1'
 
-#Database
+# Database
 gem 'pg'
-gem 'bcrypt-ruby', :require => 'bcrypt'
-gem 'aws-s3'
 
-#picutres
+# Password Encryption
+gem 'bcrypt-ruby', :require => 'bcrypt'
+
+# Uploads
+gem 'aws-s3'
+gem "fog"
+
+# Picutres
 gem "rmagick"
 gem "carrierwave"
-gem "fog"
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0.rc1'
