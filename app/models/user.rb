@@ -2,16 +2,19 @@ class User < ActiveRecord::Base
   attr_accessor :password
 
   before_save :encrypt_password
-  
-  validates_confirmation_of :password
-  validates :password, :length => { :in => 6..20 }
-  validates_presence_of :password, :on => :create
-  validates_presence_of :name
-  validates_presence_of :email
-  validates_presence_of :username
-  validates_uniqueness_of :username
-  validates_uniqueness_of :email
-  validates_uniqueness_of :name
+
+  validates :email, presence: true
+  validates :email, uniqueness: true
+  validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, on: :create }
+  validates :name, presence: true
+  validates :name, uniqueness: true
+  validates :username, presence: true
+  validates :username, uniqueness: true
+  validates :password, confirmation: true
+  validates :password, length: 6..20
+  validates :password, presence: { on: :create }
+
+  has_many :blogs
   
   def self.authenticate(email, password)
     user = find_by_email(email)
