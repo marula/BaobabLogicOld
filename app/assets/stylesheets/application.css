@@ -64,6 +64,18 @@ h2{
 	padding: 10px;
 }
 
-.centerText{
+.center{
 	text-align: center;
+}
+
+ul.navbar{
+}
+
+li.navbar{
+	display: inline;
+	padding: 10px;
+}
+
+li.navbar *{
+	text-decoration: none;
 }
