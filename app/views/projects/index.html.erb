@@ -1,33 +1,35 @@
-<h1>Listing projects</h1>
+<div class="page">
+  <h1>Listing projects</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Url</th>
-      <th>Description</th>
-      <th>Image</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @projects.each do |project| %>
+  <table>
+    <thead>
       <tr>
-        <td><%= project.title %></td>
-        <td><%= project.url %></td>
-        <td><%= project.description %></td>
-        <td><%= project.image %></td>
-        <td><%= link_to 'Show', project %></td>
-        <td><%= link_to 'Edit', edit_project_path(project) %></td>
-        <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Title</th>
+        <th>Url</th>
+        <th>Description</th>
+        <th>Image</th>
+        <th></th>
+        <th></th>
+        <th></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @projects.each do |project| %>
+        <tr>
+          <td><%= project.title %></td>
+          <td><%= project.url %></td>
+          <td><%= project.description %></td>
+          <td><%= project.image %></td>
+          <td><%= link_to 'Show', project %></td>
+          <td><%= link_to 'Edit', edit_project_path(project) %></td>
+          <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to 'New Project', new_project_path %>
+  <br>
+
+  <%= link_to 'New Project', new_project_path %>
+</div>
