@@ -11,9 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130625133516) do
+ActiveRecord::Schema.define(version: 20130618142442) do
 
-  create_table "blogs", force: true do |t|
+  create_table "blog_posts", force: true do |t|
     t.string   "title"
     t.text     "content"
     t.integer  "user_id"
