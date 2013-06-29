@@ -1,0 +1,3 @@
+class SessionsControllerController < ApplicationController
+
+end

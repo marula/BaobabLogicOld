@@ -2,13 +2,13 @@ require 'test_helper'
 
 class BlogPostsControllerTest < ActionController::TestCase
   setup do
-    @blog_post = blog_posts(:one)
+    @blog = blogs(:one)
   end
 
   test "should get index" do
     get :index
     assert_response :success
-    assert_not_nil assigns(:blog_posts)
+    assert_not_nil assigns(:blogs)
   end
 
   test "should get new" do
@@ -16,34 +16,34 @@ class BlogPostsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should create blog_post" do
+  test "should create blog" do
     assert_difference('BlogPost.count') do
-      post :create, blog_post: { content: @blog_post.content, title: @blog_post.title, user_id: @blog_post.user_id }
+      post :create, blog: { content: @blog.content, title: @blog.title, user_id: @blog.user_id }
     end
 
-    assert_redirected_to blog_post_path(assigns(:blog_post))
+    assert_redirected_to blog_path(assigns(:blog))
   end
 
-  test "should show blog_post" do
-    get :show, id: @blog_post
+  test "should show blog" do
+    get :show, id: @blog
     assert_response :success
   end
 
   test "should get edit" do
-    get :edit, id: @blog_post
+    get :edit, id: @blog
     assert_response :success
   end
 
-  test "should update blog_post" do
-    patch :update, id: @blog_post, blog_post: { content: @blog_post.content, title: @blog_post.title, user_id: @blog_post.user_id }
-    assert_redirected_to blog_post_path(assigns(:blog_post))
+  test "should update blog" do
+    patch :update, id: @blog, blog: { content: @blog.content, title: @blog.title, user_id: @blog.user_id }
+    assert_redirected_to blog_path(assigns(:blog))
   end
 
-  test "should destroy blog_post" do
+  test "should destroy blog" do
     assert_difference('BlogPost.count', -1) do
-      delete :destroy, id: @blog_post
+      delete :destroy, id: @blog
     end
 
-    assert_redirected_to blog_posts_path
+    assert_redirected_to blogs_path
   end
 end
