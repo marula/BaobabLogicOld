@@ -14,11 +14,16 @@ html, body{
 h1{
 	font-size: 28px;
 	font-weight: bold;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	text-align: center;
 }
 
 h2{
 	font-size: 24px;
 	font-weight: bold;
+	padding-top: 6px;
+	padding-bottom: 6px;
 }
 
 #wrapper {
@@ -60,22 +65,54 @@ h2{
 	padding: 10px;
 }
 
-.page{
-	padding: 10px;
-}
+
+
+
+/*MAIN*/
 
 .center{
 	text-align: center;
 }
 
+nav *{
+	display: inline;
+}
+
 ul.navbar{
+	margin-left: 10px;
+	margin-right: 10px;
 }
 
 li.navbar{
-	display: inline;
 	padding: 10px;
 }
 
 li.navbar *{
 	text-decoration: none;
+}
+
+
+
+
+/*PROJECTS*/
+
+.project{
+	padding-top: 12px;
+	padding-bottom: 12px;
+}
+
+.projectTitle{
+	display: inline;
+}
+
+.projectURL{
+	float: right;
+}
+
+.projectDescription{
+	margin-bottom: 10px;
+}
+
+.projectImage{
+
 }

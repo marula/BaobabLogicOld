@@ -1,5 +1,31 @@
 <div class="page">
-  <h1>Listing projects</h1>
+  <h1>Projects</h1>
+
+  <% if current_user_admin %>
+    <%= link_to 'New Project', new_project_path %>.
+  <% end %>
+
+  <% @projects.each do |project| %>
+    <div class="project">
+        <h2 class="projectTitle"><%= project.title %></h2>
+        <span class="projectURL"><%= link_to project.url, "http://"+project.url %></span>
+        <table>
+          <tr>
+            <td class="projectDescription"><%= project.description %></td>
+            <td class="projectImage"><%= project.image %></td>
+          </tr>
+        </table>
+
+      <% if current_user_admin %>
+        <%= link_to 'Edit', edit_project_path(project) %>
+        <%= link_to 'Delete', project, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% end %>
+    </div>
+  <% end %>
+
+</div>
+
+<!-- ORIGINAL CODE
 
   <table>
     <thead>
@@ -21,9 +47,7 @@
           <td><%= project.url %></td>
           <td><%= project.description %></td>
           <td><%= project.image %></td>
-          <td><%= link_to 'Show', project %></td>
-          <td><%= link_to 'Edit', edit_project_path(project) %></td>
-          <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          
         </tr>
       <% end %>
     </tbody>
@@ -31,5 +55,4 @@
 
   <br>
 
-  <%= link_to 'New Project', new_project_path %>
-</div>
+-->

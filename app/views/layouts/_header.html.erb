@@ -1,6 +1,5 @@
 <div id="headerContent" class="center">
-	<h1>Baobab Logic</h1>
-	
+	<%= link_to image_tag("BaobabLogic.png", :border=>0, :width=>500, :id=>"logo"), root_path %>
 	<nav class="center">
 	  <ul class="navbar" >
 	    <li class="navbar" >
@@ -15,6 +14,21 @@
 	    <li class="navbar" >
 	      <%= link_to "Contact", nil%>
 	    </li>
+	  </ul>
+	  <ul class="navbar" >
+	    <% if current_user %>
+		    <li class="navbar" >
+		      <%= link_to "Team", nil%>
+		    </li>
+			<li class="navbar">
+			<%= link_to "Log Out", log_out_path %>
+			</li>
+	    <% end %>
+	    <% if current_user_admin %>
+	      <li class="navbar">
+	        <%= link_to "Users", users_path %>
+	      </li>
+	    <% end %>
 	  </ul>
 	</nav>
 </div>
