@@ -1,3 +1,27 @@
+<div class="page blog">
+  <h1 class="blogTitle center">
+    <%= @blog.title %>
+  </h2>
+	<div class="blogSubtitle">
+	  <span>
+	    <%= @blog.created_at %> - <%= @blog.user_name(@blog.user_id) %>
+	  </span>
+  </div>
+  <p class="blogContent justify">
+    <%= @blog.content %>
+  <p>
+
+  <% if current_user_admin %>
+    <span>
+     	<%= link_to 'Edit', edit_blog_path(@blog) %>
+    	<%= link_to 'Delete', @blog, method: :delete, data: { confirm: 'Are you sure?' } %>
+			<%= link_to 'Back', blogs_path %>
+    </span>
+  <% end %>
+</div>
+
+
+<!-- ORIGINAL CODE
 <div class="page">
 	<p id="notice"><%= notice %></p>
 
@@ -18,4 +42,4 @@
 
 	<%= link_to 'Edit', edit_blog_path(@blog) %> |
 	<%= link_to 'Back', blogs_path %>
-</div>
+</div-->

@@ -1,5 +1,5 @@
 <div class="page">
-  <h1>Blogs</h1>
+  <h1>Blog</h1>
 
   <% if current_user_admin %>
     <%= link_to 'New Post', new_blog_path %>
@@ -7,13 +7,15 @@
 
   <% @blogs.each do |blog| %>
     <div class="blog">
-      <h2>
+      <h2 class="blogTitle">
         <%= link_to blog.title, blog %>
       </h2>
-      <span>
-        <%= blog.created_at %> - <%= blog.user_name(blog.user_id) %>
-      </span>
-      <p>
+      <div class="blogSubtitle">
+        <span>
+          <%= blog.created_at %> - <%= blog.user_name(blog.user_id) %>
+        </span>
+      </div>
+      <p class="blogContent justify">
         <%= blog.content %>
       <p>
 

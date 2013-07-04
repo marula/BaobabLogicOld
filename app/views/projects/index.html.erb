@@ -9,10 +9,10 @@
     <div class="project">
         <h2 class="projectTitle">
           <%= project.title %>
+          <span class="projectURL">
+            <%= link_to project.url, "http://"+project.url %>
+          </span>
         </h2>
-        <span class="projectURL">
-          <%= link_to project.url, "http://"+project.url %>
-        </span>
         <table>
           <tr>
             <td class="projectDescription">
@@ -31,6 +31,7 @@
     </div>
   <% end %>
 </div>
+
 
 
 <!-- ORIGINAL CODE
@@ -61,5 +62,4 @@
   </table>
 
   <br>
-
 -->
