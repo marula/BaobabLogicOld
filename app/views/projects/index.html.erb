@@ -7,12 +7,20 @@
 
   <% @projects.each do |project| %>
     <div class="project">
-        <h2 class="projectTitle"><%= project.title %></h2>
-        <span class="projectURL"><%= link_to project.url, "http://"+project.url %></span>
+        <h2 class="projectTitle">
+          <%= project.title %>
+        </h2>
+        <span class="projectURL">
+          <%= link_to project.url, "http://"+project.url %>
+        </span>
         <table>
           <tr>
-            <td class="projectDescription"><%= project.description %></td>
-            <td class="projectImage"><%= project.image %></td>
+            <td class="projectDescription">
+              <%= project.description %>
+            </td>
+            <td class="projectImage">
+              <%= project.image %>
+            </td>
           </tr>
         </table>
 
@@ -22,8 +30,8 @@
       <% end %>
     </div>
   <% end %>
-
 </div>
+
 
 <!-- ORIGINAL CODE
 
@@ -47,7 +55,6 @@
           <td><%= project.url %></td>
           <td><%= project.description %></td>
           <td><%= project.image %></td>
-          
         </tr>
       <% end %>
     </tbody>

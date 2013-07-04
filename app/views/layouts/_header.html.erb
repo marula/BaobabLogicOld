@@ -9,7 +9,10 @@
 	      <%= link_to "Projects", projects_path %>
 	    </li>
 	    <li class="navbar" >
-	      <%= link_to "Blog", blog_path %>
+	      <%= link_to "Blog", blogs_path %>
+	    </li>
+	    <li class="navbar" >
+	      <%= link_to "Team", nil%>
 	    </li>
 	    <li class="navbar" >
 	      <%= link_to "Contact", nil%>
@@ -17,9 +20,7 @@
 	  </ul>
 	  <ul class="navbar" >
 	    <% if current_user %>
-		    <li class="navbar" >
-		      <%= link_to "Team", nil%>
-		    </li>
+		    
 			<li class="navbar">
 			<%= link_to "Log Out", log_out_path %>
 			</li>

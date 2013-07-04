@@ -11,7 +11,7 @@ html, body{
 	height: 100%;
 }
 
-h1{
+h1, h1 *{
 	font-size: 28px;
 	font-weight: bold;
 	padding-top: 10px;
@@ -19,7 +19,7 @@ h1{
 	text-align: center;
 }
 
-h2{
+h2, h2 *{
 	font-size: 24px;
 	font-weight: bold;
 	padding-top: 6px;
@@ -70,6 +70,10 @@ h2{
 
 /*MAIN*/
 
+.page{
+	padding: 10px;
+}
+
 .center{
 	text-align: center;
 }
@@ -114,5 +118,22 @@ li.navbar *{
 }
 
 .projectImage{
+
+}
+
+
+
+
+/*BLOGS*/
+
+.blog{
+
+}
+
+.blogTitle{
+
+}
+
+.blogContent{
 
 }
