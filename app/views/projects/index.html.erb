@@ -1,33 +1,65 @@
-<h1>Listing projects</h1>
+<div class="page">
+  <h1>Projects</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Url</th>
-      <th>Description</th>
-      <th>Image</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+  <% if current_user_admin %>
+    <%= link_to 'New Project', new_project_path %>.
+  <% end %>
 
-  <tbody>
-    <% @projects.each do |project| %>
+  <% @projects.each do |project| %>
+    <div class="project">
+        <h2 class="projectTitle">
+          <%= project.title %>
+          <span class="projectURL">
+            <%= link_to project.url, "http://"+project.url %>
+          </span>
+        </h2>
+        <table>
+          <tr>
+            <td class="projectDescription">
+              <%= project.description %>
+            </td>
+            <td class="projectImage">
+              <%= project.image %>
+            </td>
+          </tr>
+        </table>
+
+      <% if current_user_admin %>
+        <%= link_to 'Edit', edit_project_path(project) %>
+        <%= link_to 'Delete', project, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+
+
+
+<!-- ORIGINAL CODE
+
+  <table>
+    <thead>
       <tr>
-        <td><%= project.title %></td>
-        <td><%= project.url %></td>
-        <td><%= project.description %></td>
-        <td><%= project.image %></td>
-        <td><%= link_to 'Show', project %></td>
-        <td><%= link_to 'Edit', edit_project_path(project) %></td>
-        <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Title</th>
+        <th>Url</th>
+        <th>Description</th>
+        <th>Image</th>
+        <th></th>
+        <th></th>
+        <th></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @projects.each do |project| %>
+        <tr>
+          <td><%= project.title %></td>
+          <td><%= project.url %></td>
+          <td><%= project.description %></td>
+          <td><%= project.image %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to 'New Project', new_project_path %>
+  <br>
+-->

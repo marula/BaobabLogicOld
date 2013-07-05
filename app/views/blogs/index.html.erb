@@ -1,31 +1,69 @@
-<h1>Listing blogs</h1>
+<div class="page">
+  <h1>Blog</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Content</th>
-      <th>User</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+  <% if current_user_admin %>
+    <%= link_to 'New Post', new_blog_path %>
+  <% end %>
 
-  <tbody>
-    <% @blogs.each do |blog| %>
-      <tr>
-        <td><%= blog.title %></td>
-        <td><%= blog.content %></td>
-        <td><%= blog.user_id %></td>
-        <td><%= link_to 'Show', blog %></td>
-        <td><%= link_to 'Edit', edit_blog_path(blog) %></td>
-        <td><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  <% @blogs.each do |blog| %>
+    <div class="blog">
+      <h2 class="blogTitle">
+        <%= link_to blog.title, blog %>
+      </h2>
+      <div class="blogSubtitle">
+        <span>
+          <%= blog.created_at %> - <%= blog.user_name(blog.user_id) %>
+        </span>
+      </div>
+      <p class="blogContent justify">
+        <%= blog.content %>
+      <p>
 
-<br>
+      <% if current_user_admin %>
+        <span>
+          <%= link_to 'Edit', edit_blog_path(blog) %>
+          <%= link_to 'Delete', blog, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </span>
+      <% end %>
+    </div>
+  <% end %>
+</div>
 
-<%= link_to 'New Blog post', new_blog_path %>
+
+
+<!-- ORIGINAL CODE
+
+  <div class="page">
+    <h1>Listing blogs</h1>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Content</th>
+          <th>User</th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @blogs.each do |blog| %>
+          <tr>
+            <td><%= blog.title %></td>
+            <td><%= blog.content %></td>
+            <td><%= blog.user_id %></td>
+            <td><%= link_to 'Show', blog %></td>
+            <td><%= link_to 'Edit', edit_blog_path(blog) %></td>
+            <td><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <br>
+
+    <%= link_to 'New Blog post', new_blog_path %>
+  </div>
+-->
