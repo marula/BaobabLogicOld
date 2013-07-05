@@ -8,7 +8,8 @@ class Blog < ActiveRecord::Base
 
   belongs_to :user
 
+
+  def user_name(id)
+  	User.find(id).name
+  end
 end
-
-
-
