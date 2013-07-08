@@ -1,6 +1,7 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
-  
+  before_filter :require_admin, only: [:new, :create, :edit, :update, :destroy]
+
   # GET /blogs
   # GET /blogs.json
   def index
@@ -25,7 +26,7 @@ class BlogsController < ApplicationController
   # POST /blogs.json
   def create
     @blog = Blog.new(blog_params)
-    
+    @blog.user_name = current_user.name
     @blog.user_id = current_user.id
     
     respond_to do |format|

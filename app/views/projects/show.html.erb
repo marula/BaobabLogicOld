@@ -17,7 +17,7 @@
 
 <p>
   <strong>Image:</strong>
-  <%= @project.image %>
+  <%= image_tag @project.image_url(:thumb) if @project.image? %>
 </p>
 
 <%= link_to 'Edit', edit_project_path(@project) %> |
