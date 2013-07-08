@@ -19,7 +19,7 @@
               <%= project.description %>
             </td>
             <td class="projectImage">
-              <%= project.image %>
+              <%= image_tag project.image_url(:thumb) if project.image? %>
             </td>
           </tr>
         </table>

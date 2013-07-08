@@ -24,8 +24,11 @@
     <%= f.text_area :description %>
   </div>
   <div class="field">
-    <%= f.label :image %><br>
-    <%= f.text_field :image %>
+    <%= f.file_field :image %>
+  </div>
+  <div class="field">
+    <%= f.label :remote_image_url, "or image URL" %><br />
+    <%= f.text_field :remote_image_url %>
   </div>
   <div class="actions">
     <%= f.submit %>
