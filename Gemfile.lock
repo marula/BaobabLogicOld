@@ -32,6 +32,8 @@ GEM
       mime-types
       xml-simple
     bcrypt-ruby (3.1.1)
+    bootstrap-sass (2.3.2.0)
+      sass (~> 3.2)
     builder (3.1.4)
     carrierwave (0.9.0)
       activemodel (>= 3.2.0)
@@ -140,6 +142,7 @@ PLATFORMS
 DEPENDENCIES
   aws-s3
   bcrypt-ruby
+  bootstrap-sass (= 2.3.2.0)
   carrierwave
   coffee-rails (~> 4.0.0)
   fog
